@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gudi Padwa Festival</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f8f8f8;
+        }
+
+        .gudi-image {
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gudi-date {
+          font-weight: bold;
+          color: #d35400;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gudi Padwa</h1>
+
+        
+
+        <p>Gudi Padwa marks the beginning of the Hindu New Year according to the lunisolar calendar. It is a significant festival celebrated in Maharashtra, Goa, and other regions.</p>
+
+        <p>The Gudi, a decorated bamboo staff, is a key symbol of the festival.</p>
+
+        <p>Traditional sweets like Puran Poli are prepared and shared.</p>
+
+        <p> Selibret Date: <span class="gudi-date" id="gudi-padwa-date">Calculating...</span></p>
+
+        <p id="greeting">Happy Gudi Padwa! Wishing you a prosperous New Year!</p>
+
+    </div>
+    <script>
+        function calculateGudiPadwaDate(year) {
+            // Approximate date calculation (as in the Python example)
+            const approxMarchStart = new Date(year, 2, 20); // Month is 0-indexed
+            const approxAprilEnd = new Date(year, 3, 20);
+            const daysBetween = (approxAprilEnd - approxMarchStart) / (1000 * 60 * 60 * 24); // Convert ms to days
+            const approxGudiPadwa = new Date(approxMarchStart.getTime() + (daysBetween / 2) * (1000 * 60 * 60 * 24));
+            return approxGudiPadwa.toLocaleDateString();
+        }
+
+        const currentYear = new Date().getFullYear();
+        document.getElementById("gudi-padwa-date").textContent = calculateGudiPadwaDate(currentYear);
+
+    </script>
+</body>
+</html>
