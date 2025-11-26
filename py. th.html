@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pythagoras Theorem</title>
+</head>
+<body>
+
+<h2>Pythagoras Theorem</h2>
+
+a: <input type="number" id="a">
+b: <input type="number" id="b">
+<button onclick="calc()">Find c</button>
+
+<p id="result"></p>
+
+<script>
+function calc() {
+  let a = document.getElementById("a").value;
+  let b = document.getElementById("b").value;
+  let c = Math.sqrt(a*a + b*b);
+  document.getElementById("result").innerText = "c = " + c;
+}
+</script>
+
+</body>
+</html>
